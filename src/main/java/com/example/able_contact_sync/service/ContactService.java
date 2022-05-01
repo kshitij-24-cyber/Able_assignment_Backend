@@ -46,4 +46,13 @@ public class ContactService {
         }
         return new ResponseModel("Not inserted");
     }
+
+    public InputModel getFiveContact() {
+        List<ContactDetail> res = contactRepository.findAll();
+        ArrayList<ContactDetail> ans = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            ans.add(res.get(i));
+        }
+        return new InputModel(ans);
+    }
 }
